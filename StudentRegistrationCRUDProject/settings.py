@@ -86,19 +86,37 @@ WSGI_APPLICATION = 'StudentRegistrationCRUDProject.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'mysql.connector.django',
+#         'NAME': 'djangoDb',
+#         'USER': 'root',
+#         'PASSWORD': 'root',
+#         'HOST': '172.17.0.2', 
+#         # Set to the address Here  MySQL server is running as a Container and
+#         # Application is Running as A Docker Container
+#         'PORT': '3306',        
+#         # Set to the port our MySQL server is listening on
+#     }
+# }
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'mysql.connector.django',
         'NAME': 'djangoDb',
         'USER': 'root',
         'PASSWORD': 'root',
-        'HOST': '172.17.0.2', 
+        'HOST': 'mysqldb', 
         # Set to the address Here  MySQL server is running as a Container and
-        # Application is Running as A Docker Container
+        # Application is Running as A Docker Container 
+        # Also both Container running in same Network so only 
+        # required to container name as host */
         'PORT': '3306',        
         # Set to the port our MySQL server is listening on
     }
 }
+
 
 
 # Password validation
