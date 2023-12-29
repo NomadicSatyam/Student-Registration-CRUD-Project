@@ -19,6 +19,12 @@ EXPOSE 8000
 # Define environment variable to avoid buffering issues
 ENV PYTHONUNBUFFERED 1
 
+# Run makemigrations and migrate commands
+RUN python manage.py makemigrations
+RUN python manage.py migrate
+
+# Create a superuser
+RUN echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'satyamm1998@gmail.com', 'admin')" | python manage.py shell
 
 
 # Run app.py when the container launches
