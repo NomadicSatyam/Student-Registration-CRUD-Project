@@ -19,13 +19,11 @@ EXPOSE 8000
 # Define environment variable to avoid buffering issues
 ENV PYTHONUNBUFFERED 1
 
-# Run makemigrations and migrate commands
-RUN python manage.py makemigrations
-RUN python manage.py migrate
+# Copy initialization script to the container
+COPY init.sh /usr/src/app/init.sh
 
-# Create a superuser
-RUN echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'satyamm1998@gmail.com', 'admin')" | python manage.py shell
+# Run the initialization script during container startup
+CMD ["/bin/bash", "/usr/src/app/init.sh"]
 
 
-# Run app.py when the container launches
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+
