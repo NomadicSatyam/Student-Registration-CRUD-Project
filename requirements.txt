@@ -1,0 +1,8 @@
+Django==4.1.1
+
+# Add other dependencies as needed
+
+mysql-connector-python==8.2.0
+pymysql==1.1.0
+
+
