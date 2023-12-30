@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-deployment
+  labels:
+    app: mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+        - name: mysqldb
+          image: mysql:latest
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "root"
+            - name: MYSQL_DATABASE
+              value: "djangoDb"
+          
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - name: mysqldata
+              mountPath: /var/lib/mysql # this is your container path from where your data will be stored
+      volumes:
+        - name: mysqldata
+          persistentVolumeClaim:
+            claimName: mysql-persistent-volume-claim # PVC claim name
