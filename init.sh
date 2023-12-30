@@ -9,3 +9,4 @@ echo "from django.contrib.auth.models import User; User.objects.create_superuser
 
 # Run the Django development server
 python manage.py runserver 0.0.0.0:8000
+
