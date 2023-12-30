@@ -1,0 +1,30 @@
+version: "3"
+services:
+  backend:
+    image: "satyambrother/student-registration-crud-project:latest"
+    container_name: student_reg
+    ports:
+      - "8000:8000"
+    networks:
+      - my-network
+    depends_on:
+      - mysql
+  mysql:
+    image: "mysql:latest"
+    container_name: mysqldb
+    ports:
+      - "3306:3306"
+
+    networks:
+      - my-network
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: djangoDb
+    volumes:
+      - "mysql-data:/var/lib/mysql"
+volumes:
+  mysql-data:
+
+networks:
+  my-network:
+         external: true
