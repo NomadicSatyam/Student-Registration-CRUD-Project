@@ -122,8 +122,8 @@ DATABASES = {
         'ENGINE': 'mysql.connector.django',
         'NAME': 'djangoDb',
         'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': os.environ.get('MYSQL_HOST', 'localhost'), 
+        'PASSWORD': 'Satyam@1998@',
+        'HOST': os.environ.get('MYSQL_HOST', 'host.docker.internal'), 
         # Getting Host Name using Environment Variable
         'PORT': '3306',
     }

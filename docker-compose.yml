@@ -1,27 +1,31 @@
 version: "3"
 services:
+  mysql:
+    image: "mysql:latest"
+    container_name: mysqldb
+    ports:
+      - "3307:3306"
+
+    networks:
+      - my-network
+    environment:
+      MYSQL_ROOT_PASSWORD: Satyam@1998@
+      MYSQL_DATABASE: djangoDb
+    volumes:
+      - "mysql-data:/var/lib/mysql"
+
   backend:
-    image: "satyambrother/student-registration-crud-project:latest"
+    image: "satyambrother/student-registration-crud-project:01"
     container_name: student_reg
     ports:
       - "8000:8000"
     networks:
       - my-network
+    environment:  
+      MYSQL_HOST: mysql
     depends_on:
       - mysql
-  mysql:
-    image: "mysql:latest"
-    container_name: mysqldb
-    ports:
-      - "3306:3306"
 
-    networks:
-      - my-network
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: djangoDb
-    volumes:
-      - "mysql-data:/var/lib/mysql"
 volumes:
   mysql-data:
 
