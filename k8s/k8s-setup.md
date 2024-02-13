@@ -6,7 +6,7 @@ Use kubeadm_installation.md to setup kubeadm
 
 ## SetUp
 
-- First clone the code to your machine
+- First clone the code to your master machine
 
 ```bash
 git clone https://github.com/NomadicSatyam/StudentRegistrationCRUDProject.git

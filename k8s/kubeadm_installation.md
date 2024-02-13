@@ -35,11 +35,11 @@ sudo apt install kubeadm=1.20.0-00 kubectl=1.20.0-00 kubelet=1.20.0-00 -y
 
 **Sample Command run on master node**
 
-<kbd>![image](https://github.com/paragpallavsingh/kubernetes-kickstarter/assets/40052830/a4e7a4af-31fa-40cf-bb9e-64ba18999cb5)</kbd>
+<kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resouces/blob/dev/Kubeadm%20Install%20Guide/a.png)</kbd>
 
-<kbd>![image](https://github.com/paragpallavsingh/kubernetes-kickstarter/assets/40052830/acf157b8-5c7b-44e7-91ef-b5437053be60)</kbd>
+<kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resouces/blob/dev/Kubeadm%20Install%20Guide/b.png)</kbd>
 
-<kbd>![image](https://github.com/paragpallavsingh/kubernetes-kickstarter/assets/40052830/8f960aae-3706-43cd-bac8-1903fbe8196d)</kbd>
+<kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resouces/blob/dev/Kubeadm%20Install%20Guide/c.png)</kbd>
 
 ---
 
