@@ -5,10 +5,12 @@ metadata:
 spec:
   containers:
     - name: student-reg
-      image: satyambrother/student-registration-crud-project:latest
+      image: satyambrother/student-registration-crud-project:02
       env:
-      - name: MYSQL_HOST
-        value: "10.98.19.211"  
+        - name: MYSQL_HOST
+          value: "10.98.19.211"
+        - name: MYSQLDB_PASSWORD
+          value: "root"
       ports:
         - containerPort: 8000
       imagePullPolicy: Always
