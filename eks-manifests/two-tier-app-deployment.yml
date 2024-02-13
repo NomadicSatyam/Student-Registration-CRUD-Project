@@ -20,7 +20,7 @@ spec:
           env:
             - name: MYSQL_HOST
               value: mysql # this is your mysql's service clusture IP, Make sure to change it with yours
-            - name: MYSQL_PASSWORD
+            - name: MYSQLDB_PASSWORD
               value: "root"
           ports:
             - containerPort: 8000
