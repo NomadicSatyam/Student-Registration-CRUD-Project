@@ -16,16 +16,12 @@ spec:
     spec:
       containers:
         - name: two-tier-app
-          image: trainwithshubham/flaskapp:latest
+          image: satyambrother/student-registration-crud-project:02
           env:
             - name: MYSQL_HOST
-              value: mysql          # this is your mysql's service clusture IP, Make sure to change it with yours
+              value: mysql # this is your mysql's service clusture IP, Make sure to change it with yours
             - name: MYSQL_PASSWORD
-              value: "admin"
-            - name: MYSQL_USER
               value: "root"
-            - name: MYSQL_DB
-              value: "mydb"
           ports:
-            - containerPort: 5000
+            - containerPort: 8000
           imagePullPolicy: Always
