@@ -35,11 +35,11 @@ sudo apt install kubeadm=1.20.0-00 kubectl=1.20.0-00 kubelet=1.20.0-00 -y
 
 **Sample Command run on master node**
 
-<kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resouces/blob/dev/Kubeadm%20Install%20Guide/a.png)</kbd>
+<kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resources/blob/dev/Kubeadm%20Install%20Guide/a.png)</kbd>
 
-<kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resouces/blob/dev/Kubeadm%20Install%20Guide/b.png)</kbd>
+<kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resources/blob/dev/Kubeadm%20Install%20Guide/b.png)</kbd>
 
-<kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resouces/blob/dev/Kubeadm%20Install%20Guide/c.png)</kbd>
+<kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resources/blob/dev/Kubeadm%20Install%20Guide/c.png)</kbd>
 
 ---
 
@@ -51,11 +51,11 @@ sudo apt install kubeadm=1.20.0-00 kubectl=1.20.0-00 kubelet=1.20.0-00 -y
    sudo kubeadm init
    ```
 
-   <kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resouces/blob/dev/Kubeadm%20Install%20Guide/d.png)</kbd>
+   <kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resources/blob/dev/Kubeadm%20Install%20Guide/d.png)</kbd>
 
    After succesfully running, your Kubernetes control plane will be initialized successfully.
 
-   <kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resouces/blob/dev/Kubeadm%20Install%20Guide/e.png)</kbd>
+   <kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resources/blob/dev/Kubeadm%20Install%20Guide/e.png)</kbd>
 
 2. Set up local kubeconfig (both for root user and normal user):
 
@@ -65,7 +65,7 @@ sudo apt install kubeadm=1.20.0-00 kubectl=1.20.0-00 kubelet=1.20.0-00 -y
    sudo chown $(id -u):$(id -g) $HOME/.kube/config
    ```
 
-   <kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resouces/blob/dev/Kubeadm%20Install%20Guide/f.png)</kbd>
+   <kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resources/blob/dev/Kubeadm%20Install%20Guide/f.png)</kbd>
 
 3. Apply Weave network:
 
@@ -73,7 +73,7 @@ sudo apt install kubeadm=1.20.0-00 kubectl=1.20.0-00 kubelet=1.20.0-00 -y
    kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
    ```
 
-   <kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resouces/blob/dev/Kubeadm%20Install%20Guide/g.png)</kbd>
+   <kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resources/blob/dev/Kubeadm%20Install%20Guide/g.png)</kbd>
 
 4. Generate a token for worker nodes to join:
 
@@ -81,11 +81,11 @@ sudo apt install kubeadm=1.20.0-00 kubectl=1.20.0-00 kubelet=1.20.0-00 -y
    sudo kubeadm token create --print-join-command
    ```
 
-   <kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resouces/blob/dev/Kubeadm%20Install%20Guide/h.png)</kbd>
+   <kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resources/blob/dev/Kubeadm%20Install%20Guide/h.png)</kbd>
 
 5. Expose port 6443 in the Security group for the Worker to connect to Master Node
 
-<kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resouces/blob/dev/Kubeadm%20Install%20Guide/i.png)</kbd>
+<kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resources/blob/dev/Kubeadm%20Install%20Guide/i.png)</kbd>
 
 ---
 
@@ -97,15 +97,15 @@ sudo apt install kubeadm=1.20.0-00 kubectl=1.20.0-00 kubelet=1.20.0-00 -y
    sudo kubeadm reset pre-flight checks
    ```
 
-   <kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resouces/blob/dev/Kubeadm%20Install%20Guide/j.png)</kbd>
+   <kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resources/blob/dev/Kubeadm%20Install%20Guide/j.png)</kbd>
 
 2. Paste the join command you got from the master node and append `--v=5` at the end.
    _Make sure either you are working as sudo user or use `sudo` before the command_
 
-   <kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resouces/blob/dev/Kubeadm%20Install%20Guide/k.png)</kbd>
+   <kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resources/blob/dev/Kubeadm%20Install%20Guide/k.png)</kbd>
 
    After succesful join->
-   <kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resouces/blob/dev/Kubeadm%20Install%20Guide/l.png)</kbd>
+   <kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resources/blob/dev/Kubeadm%20Install%20Guide/l.png)</kbd>
 
 ---
 
@@ -117,7 +117,7 @@ On Master Node:
 kubectl get nodes
 ```
 
-<kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resouces/blob/dev/Kubeadm%20Install%20Guide/m.png)</kbd>
+<kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resources/blob/dev/Kubeadm%20Install%20Guide/m.png)</kbd>
 
 ---
 
@@ -139,4 +139,4 @@ If you want to test a demo pod, you can use the following command:
 kubectl run hello-world-pod --image=busybox --restart=Never --command -- sh -c "echo 'Hello, World' && sleep 3600"
 ```
 
-<kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resouces/blob/dev/Kubeadm%20Install%20Guide/n.png)</kbd>
+<kbd>![image](https://github.com/NomadicSatyam/Github-Repo-Resources/blob/dev/Kubeadm%20Install%20Guide/n.png)</kbd>
