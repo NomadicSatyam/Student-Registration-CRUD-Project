@@ -9,7 +9,7 @@ services:
     networks:
       - my-network
     environment:
-      MYSQL_ROOT_PASSWORD: Satyam@1998@
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: djangoDb
     volumes:
       - "mysql-data:/var/lib/mysql"
@@ -23,6 +23,7 @@ services:
       - my-network
     environment:  
       MYSQL_HOST: mysql
+      MYSQLDB_PASSWORD: root
     depends_on:
       - mysql
 
