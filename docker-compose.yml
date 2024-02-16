@@ -15,7 +15,7 @@ services:
       - "mysql-data:/var/lib/mysql"
 
   backend:
-    image: "satyambrother/student-registration-crud-project:01"
+    image: "satyambrother/student-registration-crud-project:03"
     container_name: student_reg
     ports:
       - "8000:8000"
@@ -30,6 +30,8 @@ services:
 volumes:
   mysql-data:
 
+# If we don't want to create the network every time  when we run docker_compose,
+# use an external network using external: true
 networks:
   my-network:
-         external: true
+         
